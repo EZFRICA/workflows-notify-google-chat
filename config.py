@@ -1,4 +1,5 @@
 import os
 
+GOOGLE_CHAT_SPACE = os.getenv('GOOGLE_CHAT_SPACE')
 GOOGLE_CHAT_KEY = os.getenv('GOOGLE_CHAT_KEY')
 GOOGLE_CHAT_TOKEN = os.getenv('GOOGLE_CHAT_TOKEN')
