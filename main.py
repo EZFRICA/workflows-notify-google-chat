@@ -1,4 +1,3 @@
-import json
 import config
 
 from fastapi import FastAPI
@@ -13,7 +12,7 @@ app = FastAPI(title="Google Chat Notification", version="1.0", redoc_url=None)
 async def notify(message: str):
     """Hangouts Chat incoming webhook"""
 
-    url = f'https://chat.googleapis.com/v1/spaces/AAAAg-eI8mU/messages?key={config.GOOGLE_CHAT_KEY}&token={config.GOOGLE_CHAT_TOKEN}'
+    url = f'https://chat.googleapis.com/v1/spaces/{config.GOOGLE_CHAT_SPACE}/messages?key={config.GOOGLE_CHAT_KEY}&token={config.GOOGLE_CHAT_TOKEN}'
     bot_message = {"text": message}
     message_headers = {'Content-Type': 'application/json; charset=UTF-8'}
     http_obj = Http()
